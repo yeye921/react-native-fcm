@@ -1,7 +1,7 @@
 import React from 'react';
 import FlatList from 'react-native';
 import styled from 'styled-components/native';
-//import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -35,31 +35,31 @@ lists.push({
   title: `계정관리`,
   description: `이메일 변경, 비밀번호 변경, 로그아웃, 회원 탈퇴가 가능합니다.`,
 });
-lists.push({
-  id: 2,
-  title: `앱 알림 설정`,
-  description: `앱 알림을 설정하는 화면으로 이동합니다.`,
-});
-lists.push({
-  id: 3,
-  title: `앱 알림 주기 설정`,
-  description: `앱 알림 주기를 설정합니다. 키워드 별로 설정할 수 있습니다.`,
-});
-lists.push({
-  id: 4,
-  title: `서비스 이용약관`,
-  description: `앱 이용약관을 확인할 수 있습니다.`,
-});
-lists.push({
-  id: 5,
-  title: `개인정보 처리방침`,
-  description: `개인정보 처리방침을 확인할 수 있습니다.`,
-});
-lists.push({
-  id: 6,
-  title: `문의하기`,
-  description: `문의사항을 문의메일로 보내주세요.`,
-});
+// lists.push({
+//   id: 2,
+//   title: `앱 알림 설정`,
+//   description: `앱 알림을 설정하는 화면으로 이동합니다.`,
+// });
+// lists.push({
+//   id: 3,
+//   title: `앱 알림 주기 설정`,
+//   description: `앱 알림 주기를 설정합니다. 키워드 별로 설정할 수 있습니다.`,
+// });
+// lists.push({
+//   id: 4,
+//   title: `서비스 이용약관`,
+//   description: `앱 이용약관을 확인할 수 있습니다.`,
+// });
+// lists.push({
+//   id: 5,
+//   title: `개인정보 처리방침`,
+//   description: `개인정보 처리방침을 확인할 수 있습니다.`,
+// });
+// lists.push({
+//   id: 6,
+//   title: `문의하기`,
+//   description: `문의사항을 문의메일로 보내주세요.`,
+// });
 
 const Item = React.memo(({item: {id, title, description}, onPress}) => {
   return (
@@ -68,7 +68,7 @@ const Item = React.memo(({item: {id, title, description}, onPress}) => {
         <ItemTitle>{title}</ItemTitle>
         <ItemDescription>{description}</ItemDescription>
       </ItemTextContainer>
-      {/* <Icon name="right" size={24} /> */}
+      <Icon name="right" size={24} />
     </ItemContainer>
   );
 });
@@ -88,7 +88,7 @@ const SettingScreen = ({navigation}) => {
       <FlatList
         keyExtractor={(item) => item['id'].toString()}
         data={lists}
-        renderItem={({item}) => <Item item={item} onPress={_handleItemPress} />}
+        renderItem={({item}) => <Item item={item} />} //onPress={_handleItemPress}
       />
     </Container>
   );

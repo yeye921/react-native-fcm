@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     width: Platform.OS === 'android' ? 320 : 330,
     backgroundColor: 'whitesmoke',
     marginTop: Platform.OS === 'android' ? 15 : 20,
-    //paddingTop: Platform.OS === "android" ? 10 : 13,
     borderRadius: Platform.OS === 'android' ? 0 : 6,
   },
 });

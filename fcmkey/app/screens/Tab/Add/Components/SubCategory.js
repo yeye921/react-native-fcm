@@ -4,6 +4,10 @@ import RNPickerSelect, {defaultStyles} from 'react-native-picker-select';
 
 const eng = [
   {
+    label: '공과대학 단과대',
+    value: '공과대학 단과대',
+  },
+  {
     label: '기계공학과',
     value: '기계공학과',
   },
@@ -47,6 +51,10 @@ const eng = [
 
 const it = [
   {
+    label: '정보통신대학 단과대',
+    value: '정보통신대학 단과대',
+  },
+  {
     label: '전자공학과',
     value: '전자공학과',
   },
@@ -73,6 +81,10 @@ const it = [
 ];
 const ns = [
   {
+    label: '자연과학대학 단과대',
+    value: '자연과학대학 단과대',
+  },
+  {
     label: '수학과',
     value: '수학과',
   },
@@ -92,6 +104,10 @@ const ns = [
 
 const biz = [
   {
+    label: '경영대학 단과대',
+    value: '경영대학 단과대',
+  },
+  {
     label: '경영학과',
     value: '경영학과',
   },
@@ -109,6 +125,10 @@ const biz = [
   },
 ];
 const human = [
+  {
+    label: '인문대학 단과대',
+    value: '인문대학 단과대',
+  },
   {
     label: '국어국문학과',
     value: '국어국문학과',
@@ -131,6 +151,10 @@ const human = [
   },
 ];
 const coss = [
+  {
+    label: '사회과학대학 단과대',
+    value: '사회과학대학 단과대',
+  },
   {
     label: '경제학과',
     value: '경제학과',
@@ -202,27 +226,27 @@ const SubCategory = ({main_cateValue, sub_cateValue, sub_cateChange}) => (
         color: 'black',
       }}
       items={
-        main_cateValue === 'portal'
+        main_cateValue === '아주대학교 포탈'
           ? nul
-          : main_cateValue === 'eng'
+          : main_cateValue === '공과대학'
           ? eng
-          : main_cateValue === 'it'
+          : main_cateValue === '정보통신대학'
           ? it
-          : main_cateValue === 'ns'
+          : main_cateValue === '자연과학대학'
           ? ns
-          : main_cateValue === 'biz'
+          : main_cateValue === '경영대학'
           ? biz
-          : main_cateValue === 'human'
+          : main_cateValue === '인문대학'
           ? human
-          : main_cateValue === 'coss'
+          : main_cateValue === '사회과학대학'
           ? coss
-          : main_cateValue === 'medicine'
+          : main_cateValue === '의과대학'
           ? medicine
-          : main_cateValue === 'nursing'
+          : main_cateValue === '간호대학'
           ? nursing
-          : main_cateValue === 'pharm'
+          : main_cateValue === '약학대학'
           ? pharm
-          : main_cateValue === 'uc'
+          : main_cateValue === '다산학부대학'
           ? uc
           : isa
       }

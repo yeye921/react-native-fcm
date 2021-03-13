@@ -1,7 +1,7 @@
-//import * as React from 'react';
-import React, {Component} from 'react';
+import * as React from 'react';
+import {Component} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   Text,
@@ -36,7 +36,7 @@ export default class LoginScreen extends Component {
         return response.json();
       })
       .then((data) => {
-        //console.log(data.success);
+        //console.log(data);
 
         if (data.success === true) {
           AsyncStorage.setItem('authInfo', JSON.stringify(data.result));
@@ -48,7 +48,7 @@ export default class LoginScreen extends Component {
           Alert.alert('아이디 또는 비밀번호를 \n확인해주세요.');
         }
       })
-      .catch((error) => Alert.alert(error));
+      .catch((error) => Alert.alert(error.message));
   }
   render() {
     return (
@@ -57,7 +57,7 @@ export default class LoginScreen extends Component {
 
         <View style={styles.iconContainer}>
           <Text style={styles.title}>Alarm</Text>
-          <Icon name="bell-ring" size={50} color="gold" />
+          <Icons name="bell-ring" size={50} color="gold" />
         </View>
 
         <View style={styles.id}>
@@ -84,7 +84,7 @@ export default class LoginScreen extends Component {
             onPress={() => this.buttonClick()}
             underlayColor={'transparent'}>
             <View style={styles.button}>
-              <Text style={styles.buttonTitle}>log in</Text>
+              <Text style={styles.buttonTitle}>로그인</Text>
             </View>
           </TouchableHighlight>
         </View>

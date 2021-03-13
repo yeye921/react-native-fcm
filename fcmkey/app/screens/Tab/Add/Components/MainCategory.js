@@ -5,51 +5,51 @@ import RNPickerSelect, {defaultStyles} from 'react-native-picker-select';
 const category = [
   {
     label: '아주대학교 포탈',
-    value: 'portal',
+    value: '아주대학교 포탈',
   },
   {
     label: '공과대학',
-    value: 'eng',
+    value: '공과대학',
   },
   {
     label: '정보통신대학',
-    value: 'it',
+    value: '정보통신대학',
   },
   {
     label: '자연과학대학',
-    value: 'ns',
+    value: '자연과학대학',
   },
   {
     label: '경영대학',
-    value: 'biz',
+    value: '경영대학',
   },
   {
     label: '인문대학',
-    value: 'human',
+    value: '인문대학',
   },
   {
     label: '사회과학대학',
-    value: 'coss',
+    value: '사회과학대학',
   },
   {
     label: '의과대학',
-    value: 'medicine',
+    value: '의과대학',
   },
   {
     label: '간호대학',
-    value: 'nursing',
+    value: '간호대학',
   },
   {
     label: '약학대학',
-    value: 'pharm',
+    value: '약학대학',
   },
   {
     label: '다산학부대학',
-    value: 'uc',
+    value: '다산학부대학',
   },
   {
     label: '국제학부',
-    value: 'isa',
+    value: '국제학부',
   },
 ];
 
@@ -78,7 +78,7 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 12,
     paddingHorizontal: 10,
-    //borderWidth: 1,
+    borderWidth: 1,
     borderColor: 'gainsboro',
     borderRadius: 4,
     color: 'black',
@@ -89,16 +89,16 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingHorizontal: 10,
     paddingVertical: 8,
-    //borderWidth: 0.5,
+    borderWidth: 0.5,
     borderColor: 'purple',
-    //borderRadius: 15,
+    borderRadius: 15,
     color: 'rgba(0,0,0,0.7)',
     width: 320,
     height: 45,
     backgroundColor: 'whitesmoke',
   },
   placeholder: {
-    color: 'rgba(0,0,0,0.5)',
+    color: 'rgba(0,0,0,0.3)',
   },
 });
 export default MainCategory;

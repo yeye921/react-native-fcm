@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import KeywordButton from './KeywordButton';
 
 const Keyword = ({keyword, deleteKeyword}) => (
-  <View style={styles.todoContainer}>
+  <View style={styles.Container}>
     <View>
       <Text style={styles.todoText}>{keyword.title}</Text>
       <Text style={styles.cateText}>{keyword.cate}</Text>
@@ -18,7 +18,7 @@ const Keyword = ({keyword, deleteKeyword}) => (
 );
 
 const styles = StyleSheet.create({
-  todoContainer: {
+  Container: {
     marginLeft: 20,
     marginRight: 20,
     backgroundColor: '#ffffff',
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   todoText: {
-    color: Platform.OS === 'android' ? 'rgba(0,0,0,0.7)' : null, //원래는 0.7
+    color: Platform.OS === 'android' ? 'rgba(0,0,0,0.7)' : null,
     fontSize: 17,
   },
   cateText: {
     paddingTop: Platform.OS === 'android' ? 0.5 : 5,
     fontSize: 12,
-    color: 'rgba(0,0,0,8)', //원래는 0.5
+    color: 'rgba(0,0,0,0.5)',
   },
 });
 export default Keyword;

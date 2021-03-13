@@ -1,47 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
-//import { Entypo } from "@expo/vector-icons";
 
-import ListScreen from '../screens/Tab/ListScreen';
 import AddScreen from '../screens/Tab/Add/AddScreen';
-import DetailsScreen from '../screens/Tab/DetailsScreen';
 import SettingStack from './SettingStack';
-
-const ListStack = createStackNavigator(); //여기서 home없애기
-
-function ListStackScreen() {
-  return (
-    <ListStack.Navigator>
-      <ListStack.Screen
-        name="키워드 목록"
-        component={ListScreen}
-        options={{
-          headerTransParent: false,
-          headerTintColor: 'dodgerblue',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 20,
-            alignSelf: 'center',
-          },
-        }}
-      />
-      <ListStack.Screen
-        name="장학생"
-        component={DetailsScreen}
-        options={{
-          headerTitleStyle: {
-            fontSize: 20,
-            //alignSelf: "center",
-          },
-        }}
-      />
-    </ListStack.Navigator>
-  );
-}
+import ListTabStack from './ListTabStack';
+import ListScreen from '../screens/Tab/List/ListScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -74,7 +40,7 @@ export default function TabStackScreen() {
               paddingBottom: 3,
             },
           }}>
-          <Tab.Screen name="List" component={ListStackScreen} />
+          <Tab.Screen name="List" component={ListScreen} />
           <Tab.Screen name="Add" component={AddScreen} />
           <Tab.Screen name="Settings" children={() => <SettingStack />} />
         </Tab.Navigator>
@@ -82,3 +48,39 @@ export default function TabStackScreen() {
     </NavigationContainer>
   );
 }
+
+/*
+import { createStackNavigator } from "@react-navigation/stack";
+import ListScreen from "../screens/Tab/List/ListScreen";
+import DetailsScreen from "../screens/Tab/List/DetailsScreen";
+const ListStack = createStackNavigator(); //여기서 home없애기
+function ListStackScreen() {
+  return (
+    <ListStack.Navigator>
+      <ListStack.Screen
+        name="키워드 목록"
+        component={ListScreen}
+        options={{
+          headerTransParent: false,
+          headerTintColor: "dodgerblue",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 20,
+            alignSelf: "center",
+          },
+        }}
+      />
+      <ListStack.Screen
+        name="장학생"
+        component={DetailsScreen}
+        options={{
+          headerTitleStyle: {
+            fontSize: 20,
+            //alignSelf: "center",
+          },
+        }}
+      />
+    </ListStack.Navigator>
+  );
+}
+*/
